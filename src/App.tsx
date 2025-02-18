@@ -61,6 +61,7 @@ function App() {
               <button onClick={() => scrollToSection('skills')} className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white transition-colors">Skills</button>
               <button onClick={() => scrollToSection('resume')} className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white transition-colors">Resume</button>
               <button onClick={() => scrollToSection('projects')} className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white transition-colors">Projects</button>
+              <button onClick={() => scrollToSection('Certifications')} className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white transition-colors">Certifications</button>
               <button onClick={() => scrollToSection('contact')} className="block w-full text-left px-3 py-2 text-blue-500 hover:text-blue-400 transition-colors">Contact</button>
             </div>
           </div>
