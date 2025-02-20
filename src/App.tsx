@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-import { Github, Linkedin, Mail, ExternalLink, Code2, Briefcase, User, ChevronDown, FileText, Download, Building, GraduationCap, Calendar, Menu, X, MapPin, Send } from 'lucide-react';
+
+import { Github, Linkedin, Mail, ExternalLink, Code2, Briefcase, User, ChevronDown, FileText, Download, Building, GraduationCap, Calendar, Menu, X, MapPin, Send, Database, Globe, Server, Layout, Braces, Terminal } from 'lucide-react';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,6 +39,7 @@ function App() {
               <button onClick={() => scrollToSection('skills')} className="text-gray-300 hover:text-white transition-colors">Skills</button>
               <button onClick={() => scrollToSection('resume')} className="text-gray-300 hover:text-white transition-colors">Resume</button>
               <button onClick={() => scrollToSection('projects')} className="text-gray-300 hover:text-white transition-colors">Projects</button>
+              <button onClick={() => scrollToSection('Certifications')} className="text-gray-300 hover:text-white transition-colors">Certifications</button>
               <button onClick={() => scrollToSection('contact')} className="text-blue-500 hover:text-blue-400 transition-colors">Contact</button>
             </div>
 
@@ -153,6 +155,7 @@ function App() {
       </section>
 
       {/* Skills Section */}
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <section id="skills" className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-2 mb-8">
@@ -161,26 +164,28 @@ function App() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {[
-              'JavaScript/TypeScript',
-              'React/Next.js',
-              'Node.js',
-              'Python',
-              'HTML & CSS',
-              'Tailwind CSS',
-              'PostgreSQL',
-              'MongoDB',
-              'GraphQL'
+              { name: 'JavaScript/TypeScript', icon: <Braces className="text-yellow-500" size={24} /> },
+              { name: 'React/Next.js', icon: <Code2 className="text-blue-500" size={24} /> },
+              { name: 'Node.js', icon: <Server className="text-green-600" size={24} /> },
+              { name: 'Python', icon: <Terminal className="text-blue-700" size={24} /> },
+              { name: 'HTML & CSS', icon: <Layout className="text-orange-500" size={24} /> },
+              { name: 'Tailwind CSS', icon: <Layout className="text-sky-500" size={24} /> },
+              { name: 'PostgreSQL', icon: <Database className="text-blue-600" size={24} /> },
+              { name: 'MongoDB', icon: <Database className="text-green-500" size={24} /> },
+              { name: 'GraphQL', icon: <Globe className="text-pink-600" size={24} /> }
             ].map((skill) => (
               <div 
-                key={skill}
-                className="bg-gray-50 p-4 rounded-lg text-center hover:shadow-md transition-shadow"
+                key={skill.name}
+                className="bg-gray-50 p-6 rounded-lg flex flex-col items-center gap-3 hover:shadow-md transition-all hover:-translate-y-1"
               >
-                {skill}
+                {skill.icon}
+                <span className="text-gray-700 font-medium text-center">{skill.name}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
+    </div>
 
      
       {/* Resume Section */}
