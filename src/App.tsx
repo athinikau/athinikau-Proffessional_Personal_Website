@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-
-
 import { Github, Linkedin, Mail, ExternalLink, Code2, Briefcase, User, ChevronDown, FileText, Download, Building, GraduationCap, Calendar, Menu, X, MapPin, Send, Database, Globe, Server, Layout, Braces, Terminal } from 'lucide-react';
 
 function App() {
@@ -39,8 +37,8 @@ function App() {
               <button onClick={() => scrollToSection('skills')} className="text-gray-300 hover:text-white transition-colors">Skills</button>
               <button onClick={() => scrollToSection('resume')} className="text-gray-300 hover:text-white transition-colors">Resume</button>
               <button onClick={() => scrollToSection('projects')} className="text-gray-300 hover:text-white transition-colors">Projects</button>
-              <button onClick={() => scrollToSection('Certifications')} className="text-gray-300 hover:text-white transition-colors">Certifications</button>
-              <button onClick={() => scrollToSection('contact')} className="text-blue-500 hover:text-blue-400 transition-colors">Contact</button>
+              <button onClick={() => scrollToSection('certifications')} className="text-gray-300 hover:text-white transition-colors">Certifications</button>
+              <button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-white transition-colors">Contact</button>
             </div>
 
             {/* Mobile menu button */}
@@ -63,8 +61,8 @@ function App() {
               <button onClick={() => scrollToSection('skills')} className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white transition-colors">Skills</button>
               <button onClick={() => scrollToSection('resume')} className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white transition-colors">Resume</button>
               <button onClick={() => scrollToSection('projects')} className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white transition-colors">Projects</button>
-              <button onClick={() => scrollToSection('Certifications')} className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white transition-colors">Certifications</button>
-              <button onClick={() => scrollToSection('contact')} className="block w-full text-left px-3 py-2 text-blue-500 hover:text-blue-400 transition-colors">Contact</button>
+              <button onClick={() => scrollToSection('certifications')} className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white transition-colors">Certifications</button>
+              <button onClick={() => scrollToSection('contact')} className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white transition-colors">Contact</button>
             </div>
           </div>
         )}
@@ -156,38 +154,37 @@ function App() {
 
       {/* Skills Section */}
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <section id="skills" className="bg-white py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center gap-2 mb-8">
-            <Code2 className="text-blue-600" size={24} />
-            <h2 className="text-3xl font-bold">Skills</h2>
+        <section id="skills" className="bg-white py-20 px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center gap-2 mb-8">
+              <Code2 className="text-blue-600" size={24} />
+              <h2 className="text-3xl font-bold">Skills</h2>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+              {[
+                { name: 'JavaScript/TypeScript', icon: <Braces className="text-yellow-500" size={24} /> },
+                { name: 'React/Next.js', icon: <Code2 className="text-blue-500" size={24} /> },
+                { name: 'Node.js', icon: <Server className="text-green-600" size={24} /> },
+                { name: 'Python', icon: <Terminal className="text-blue-700" size={24} /> },
+                { name: 'HTML & CSS', icon: <Layout className="text-orange-500" size={24} /> },
+                { name: 'Tailwind CSS', icon: <Layout className="text-sky-500" size={24} /> },
+                { name: 'PostgreSQL', icon: <Database className="text-blue-600" size={24} /> },
+                { name: 'MongoDB', icon: <Database className="text-green-500" size={24} /> },
+                { name: 'GraphQL', icon: <Globe className="text-pink-600" size={24} /> }
+              ].map((skill) => (
+                <div 
+                  key={skill.name}
+                  className="bg-gray-50 p-6 rounded-lg flex flex-col items-center gap-3 hover:shadow-md transition-all hover:-translate-y-1"
+                >
+                  {skill.icon}
+                  <span className="text-gray-700 font-medium text-center">{skill.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {[
-              { name: 'JavaScript/TypeScript', icon: <Braces className="text-yellow-500" size={24} /> },
-              { name: 'React/Next.js', icon: <Code2 className="text-blue-500" size={24} /> },
-              { name: 'Node.js', icon: <Server className="text-green-600" size={24} /> },
-              { name: 'Python', icon: <Terminal className="text-blue-700" size={24} /> },
-              { name: 'HTML & CSS', icon: <Layout className="text-orange-500" size={24} /> },
-              { name: 'Tailwind CSS', icon: <Layout className="text-sky-500" size={24} /> },
-              { name: 'PostgreSQL', icon: <Database className="text-blue-600" size={24} /> },
-              { name: 'MongoDB', icon: <Database className="text-green-500" size={24} /> },
-              { name: 'GraphQL', icon: <Globe className="text-pink-600" size={24} /> }
-            ].map((skill) => (
-              <div 
-                key={skill.name}
-                className="bg-gray-50 p-6 rounded-lg flex flex-col items-center gap-3 hover:shadow-md transition-all hover:-translate-y-1"
-              >
-                {skill.icon}
-                <span className="text-gray-700 font-medium text-center">{skill.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
 
-     
       {/* Resume Section */}
       <section id="resume" className="py-20 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
@@ -269,49 +266,49 @@ function App() {
             <h2 className="text-3xl font-bold">Projects</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-  {[
-    {
-      title: 'Weather App',
-      description: 'Stay prepared for any weather with weatherApp – your reliable, real-time weather companion!',
-      image: 'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80',
-      link: 'https://delicate-florentine-a22957.netlify.app/', // Add the link here
-    },
-    {
-      title: 'Website design',
-      description: 'A React-based project for wipros website ',
-      image: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&q=80',
-      link: 'https://athinimbiko5.wixsite.com/wipro-3', // Add the link here
-    },
-    {
-      title: 'Chat app',
-      description: 'A React-based project management tool with real-time updates',
-      image: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&q=80',
-      link: 'https://adorable-sherbet-de7ead.netlify.app/', // Add the link here
-    }
-  ].map((project) => (
-    <div key={project.title} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
-      <img 
-        src={project.image} 
-        alt={project.title}
-        className="w-full h-48 object-cover"
-      />
-      <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-        <p className="text-gray-600 mb-4">{project.description}</p>
-        <a 
-          href={project.link} // Use the link from the project object
-          className="inline-flex items-center text-blue-600 hover:text-blue-700"
-        >
-          View Project <ExternalLink size={16} className="ml-1" />
-        </a>
-      </div>
-    </div>
-  ))}
+            {[
+              {
+                title: 'Weather App',
+                description: 'Stay prepared for any weather with weatherApp – your reliable, real-time weather companion!',
+                image: 'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80',
+                link: 'https://delicate-florentine-a22957.netlify.app/',
+              },
+              {
+                title: 'Website design',
+                description: 'A React-based project for wipros website ',
+                image: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&q=80',
+                link: 'https://athinimbiko5.wixsite.com/wipro-3',
+              },
+              {
+                title: 'Chat app',
+                description: 'A React-based project management tool with real-time updates',
+                image: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&q=80',
+                link: 'https://adorable-sherbet-de7ead.netlify.app/',
+              }
+            ].map((project) => (
+              <div key={project.title} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <a 
+                    href={project.link}
+                    className="inline-flex items-center text-blue-600 hover:text-blue-700"
+                  >
+                    View Project <ExternalLink size={16} className="ml-1" />
+                  </a>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
-      {/* Projects Section */}
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+
+      {/* Certifications Section */}
       <section id="certifications" className="py-20 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-2 mb-8">
@@ -371,7 +368,6 @@ function App() {
           </div>
         </div>
       </section>
-    </div>
 
       {/* Contact Section */}
       <section id="contact" className="py-20 px-4 bg-white">
